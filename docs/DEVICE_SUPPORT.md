@@ -11,12 +11,13 @@
 
 These are research references, not vendored code:
 
-- Device tree: https://github.com/motorola-sm6150-devs/android_device_motorola_hanoip
+- AOSP-oriented device tree candidate: https://github.com/bhawesh2002/android_device_motorola_hanoip
+- Older device tree: https://github.com/motorola-sm6150-devs/android_device_motorola_hanoip
 - Related device tree: https://github.com/motorola-sm6150-devs/device_motorola_hanoip
 - Common device configuration: https://github.com/LineageOS/android_device_motorola_sm6150-common
 - Moto-common target status: https://github.com/moto-common/android_device_motorola_targets
 
-The available trees include older LineageOS-era branches. A Moto-common target listing marks hanoip as dropped, so we must not assume an old tree builds against a newer Android base.
+The AOSP-oriented candidate contains AOSP-specific product files, but its compatibility with a current AOSP release has not been established. Other available trees include older LineageOS-era branches. A Moto-common target listing marks hanoip as dropped, so we must not assume an old tree builds against a newer Android base.
 
 ## Audit required before platform work
 

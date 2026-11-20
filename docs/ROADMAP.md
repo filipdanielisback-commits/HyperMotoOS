@@ -1,18 +1,19 @@
 # HyperMotoOS ROM roadmap
 
-## Phase 0 — ROM foundation
+## Phase 0 — AOSP foundation
 - [x] Refocus repository on a real Android ROM (not a launcher)
+- [x] Select AOSP as the intended platform base
 - [x] Create manifest, device, system-extension, and vendor integration work areas
 - [x] Document Moto G60 research leads and licensing boundaries
-- [ ] Select maintained Android base and pin exact manifest revision
-- [ ] Audit and pin hanoip device/common/kernel/vendor dependencies
+- [ ] Select and pin an exact AOSP release manifest revision
+- [ ] Audit and pin AOSP-compatible hanoip device/common/kernel/vendor dependencies
 - [ ] Establish reproducible build host and build instructions
 
 ## Phase 1 — Device bring-up
 - [ ] Verify exact Moto G60 variant and codename
 - [ ] Resolve device tree dependencies and firmware baseline
-- [ ] Validate kernel source/toolchain compatibility
-- [ ] Build unmodified base ROM first
+- [ ] Validate kernel source/toolchain compatibility with selected AOSP release
+- [ ] Build unmodified AOSP for the target
 - [ ] Test boot and core hardware functions on a dedicated test device
 - [ ] Document recovery limitations and known issues
 

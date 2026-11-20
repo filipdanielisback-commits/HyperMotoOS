@@ -2,14 +2,22 @@
 
 | Layer | Responsibility | Direction |
 |---|---|---|
-| Android platform | Framework, runtime, security, compatibility | Select and pin a maintained AOSP-based ROM base |
-| Device support | Board config, kernel, vendor interfaces, init, SELinux | Audit hanoip device and common trees before selecting revisions |
+| Android platform | Framework, runtime, security, compatibility | Build directly from a pinned AOSP release |
+| Device support | Board config, kernel, vendor interfaces, init, SELinux | Audit hanoip device and common trees for AOSP compatibility |
 | System UI | Status bar, quick settings, notifications, lock screen | Prefer supported SystemUI overlays and limited platform changes |
-| Launcher | Home screen, dock, app library, widgets | Independent Android application |
-| Theme | Wallpapers, icon pack, colors, glass-like surfaces | Original artwork and accessible resources |
+| Launcher | Home screen, dock, app library, widgets | Separate Android system component; not the HyperMotoOS product itself |
+| Theme | Wallpapers, icon resources, colors, glass-like surfaces | Original artwork and accessible resources |
 | Setup | First-boot onboarding | Use supported Android setup APIs; no destructive generic partition editor |
 | Keyboard | Text input and theme | Android InputMethodService with privacy-first behavior |
 | Google integration | Play services, Play Store, Gmail | Optional, properly licensed packages; never commit proprietary APKs |
+
+## AOSP integration principles
+
+- Keep upstream AOSP changes isolated and documented.
+- Prefer resource overlays and modular system components where possible.
+- Pin exact upstream and device-source revisions in the manifest.
+- Track security patches and compatibility changes across platform updates.
+- Do not claim support for an AOSP release until the target device has built and passed documented tests.
 
 ## UI rules
 
@@ -22,7 +30,7 @@
 
 ## Build provenance
 
-Every future build must record the Android manifest revision, device/common/kernel/vendor revisions, proprietary blob provenance, build requirements, known issues, and test results.
+Every future build must record the AOSP manifest revision, device/common/kernel/vendor revisions, proprietary blob provenance, build requirements, known issues, and test results.
 
 ## Excluded from the first prototype
 

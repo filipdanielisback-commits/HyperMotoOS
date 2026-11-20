@@ -1,49 +1,42 @@
 # HyperMotoOS
 
-**HyperMoto OS** is an experimental Android custom-ROM project focused on a polished, glass-inspired interface and a carefully maintained Android foundation.
+**HyperMoto OS** is an experimental Android custom-ROM project. The goal is a real operating-system build based on AOSP or a compatible Android ROM foundation, with HyperMoto changes integrated into Android's framework, SystemUI, Settings, setup flow, and device configuration.
 
-> **Status: documentation scaffold / not bootable.** This repository does not yet contain a complete Android source tree, device configuration, recovery image, or flashable ROM.
+> **Status: early ROM scaffold — not buildable and not bootable.** This repository does not contain the Android platform source tree, a pinned upstream manifest, complete device tree, kernel, vendor blobs, or flashable images.
 
-## Goals
+## Project direction
 
-- AOSP-based Android foundation with a distinctive HyperMoto identity.
-- Launcher with home screen, dock, app library, widgets, and original themed icons.
-- Glass-inspired control center, notification shade, lock screen, and status-bar styling.
-- HyperMoto Settings and first-boot setup experience.
-- Privacy-first custom keyboard using Android's input-method APIs.
-- Optional Google Mobile Services integration using properly licensed distribution packages.
-- Initial device research for Motorola Moto G60 (**codename: `hanoip`**).
+HyperMoto is **not a launcher project**. The repository is organized for ROM source integration:
 
-## Principles
+- `manifest/` — pinned upstream and local Android source manifest.
+- `device/motorola/hanoip/` — Motorola Moto G60 device integration work area.
+- `system_ext/` — planned ROM-level SystemUI, Settings, setup, and framework integration.
+- `vendor/hypermoto/` — original HyperMoto product configuration.
+- `docs/` — architecture, device research, and roadmap.
 
-1. Android security, accessibility, and app compatibility come first.
-2. Create an original glass-inspired design; do not copy Apple's proprietary implementation or assets.
-3. Use original Squirtle-inspired-but-independent artwork, not Pokémon character artwork without permission.
-4. Record upstream sources, exact revisions, licenses, build environment, and test results.
-5. Never describe an experimental image as safe or ready to install without device testing.
-
-## Repository map
-
-```text
-HyperMotoOS/
-├── docs/       # architecture, device research, roadmap
-├── design/     # original visual design assets
-├── packages/   # planned Android application modules
-├── .gitignore
-├── LICENSE
-└── README.md
-```
-
-This is a project scaffold, not the Android platform source tree.
+AOSP is a large multi-repository source tree. It is obtained separately with Google's `repo` tool; this GitHub repository will hold HyperMoto's manifest and original integration changes.
 
 ## Target device
 
-The first research target is the Motorola Moto G60 (`hanoip`). Community device trees exist, but their branches, vendor blobs, kernel compatibility, and build status need an audit before choosing a base. See [Device Support](docs/DEVICE_SUPPORT.md).
+Initial research target: Motorola Moto G60, codename `hanoip`. Candidate community trees are listed in [device support](docs/DEVICE_SUPPORT.md). They must be audited and pinned before any build can be claimed.
 
-## Google apps and services
+## Planned ROM features
 
-Google Play services, Play Store, and Gmail are proprietary Google components. They are not part of AOSP and cannot simply be copied into this repository. Any future integration must follow applicable Google licensing, certification, and distribution requirements. Keep the base build separable from optional licensed packages.
+- Original glass-inspired Android SystemUI, including status bar, battery percentage, notifications, and control center/quick settings.
+- HyperMoto Settings and first-boot setup experience.
+- System-level icon/theme resources and original artwork.
+- Optional Google Mobile Services integration only through appropriately licensed distribution.
+- Device-specific support with documented kernel, firmware, and vendor requirements.
 
-## Disclaimer
+## Important boundaries
 
-HyperMotoOS is an independent community project and is not affiliated with Google, Motorola, Apple, or The Pokémon Company. Android is a trademark of Google LLC. Third-party names and marks belong to their respective owners.
+- No destructive repartitioning as part of setup. Respect the device's existing partition layout.
+- Google Play services, Play Store, and Gmail are proprietary Google components; do not commit APKs or redistribute them without authorization.
+- Use original artwork and properly licensed assets. Do not copy Apple's proprietary assets or Pokémon character artwork without permission.
+- Never label a build safe, stable, or flashable until it has been reproducibly built and tested on the exact target device.
+
+## Current status
+
+See [Roadmap](docs/ROADMAP.md), [Architecture](docs/ARCHITECTURE.md), and [Moto G60 device research](docs/DEVICE_SUPPORT.md).
+
+HyperMotoOS is independent and is not affiliated with Google, Motorola, Apple, or The Pokémon Company.

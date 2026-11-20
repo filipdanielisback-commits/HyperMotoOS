@@ -1,48 +1,43 @@
-# HyperMotoOS roadmap
+# HyperMotoOS ROM roadmap
 
-## Phase 0 — Project foundation
-- [x] Repository documentation scaffold
-- [x] Project principles and licensing boundaries
-- [x] Moto G60 codename and candidate upstream references
-- [ ] Choose Android base and pin manifest revision
-- [ ] Audit device, common, kernel, and vendor dependencies
+## Phase 0 — ROM foundation
+- [x] Refocus repository on a real Android ROM (not a launcher)
+- [x] Create manifest, device, system-extension, and vendor integration work areas
+- [x] Document Moto G60 research leads and licensing boundaries
+- [ ] Select maintained Android base and pin exact manifest revision
+- [ ] Audit and pin hanoip device/common/kernel/vendor dependencies
+- [ ] Establish reproducible build host and build instructions
 
-## Phase 1 — Design prototype
-- [ ] Define colors, typography, spacing, motion, and shape tokens
-- [ ] Create original Squirtle-inspired-but-independent mascot/icon artwork
-- [ ] Prototype launcher, dock, and app library
-- [ ] Prototype control center and notification concepts
-- [ ] Define status-bar and battery presentation
-- [ ] Design setup assistant screens
-
-## Phase 2 — Android app prototypes
-- [ ] HyperMoto Launcher
-- [ ] HyperMoto Settings companion screens
-- [ ] HyperMoto Control Center prototype
-- [ ] HyperMoto Setup experience
-- [ ] HyperMoto Keyboard with privacy-first input handling
-- [ ] Icon and wallpaper package
-
-## Phase 3 — Platform integration
-- [ ] Integrate selected SystemUI changes
-- [ ] Integrate settings overlays and default configuration
-- [ ] Integrate setup flow with Android first-boot lifecycle
-- [ ] Validate permissions, SELinux, signing, and compatibility
-- [ ] Keep Google packages optional and properly licensed
-
-## Phase 4 — Device bring-up
-- [ ] Validate pinned hanoip source set
-- [ ] Produce reproducible engineering build
-- [ ] Run build-time checks
+## Phase 1 — Device bring-up
+- [ ] Verify exact Moto G60 variant and codename
+- [ ] Resolve device tree dependencies and firmware baseline
+- [ ] Validate kernel source/toolchain compatibility
+- [ ] Build unmodified base ROM first
 - [ ] Test boot and core hardware functions on a dedicated test device
-- [ ] Document known issues and recovery limitations
+- [ ] Document recovery limitations and known issues
 
-## Phase 5 — Alpha
-- [ ] Publish source revision and build provenance
-- [ ] Publish checksums and known issues
-- [ ] Invite testers only after device validation
-- [ ] Collect bug reports and iterate
+## Phase 2 — HyperMoto ROM identity
+- [ ] Add HyperMoto product branding and boot animation
+- [ ] Implement original framework resource overlays and theme
+- [ ] Integrate HyperMoto SystemUI changes (status bar, battery display, quick settings)
+- [ ] Integrate notification and lock-screen styling
+- [ ] Implement system-level icon theme with original artwork
+- [ ] Integrate HyperMoto Settings
+
+## Phase 3 — First boot and system apps
+- [ ] Integrate a ROM-level setup experience using Android setup APIs
+- [ ] Add language, region, Wi-Fi, privacy, and restore/setup choices
+- [ ] Keep partition layout handling device-specific and non-destructive
+- [ ] Evaluate optional, properly licensed Google services distribution
+- [ ] Add and test other system applications only where licensing permits
+
+## Phase 4 — Validation
+- [ ] Run build and static checks
+- [ ] Validate permissions, SELinux, signing, encryption, and OTA assumptions
+- [ ] Test camera, audio, radio, Wi-Fi, Bluetooth, GPS, sensors, and charging
+- [ ] Test Android compatibility and security updates
+- [ ] Publish build provenance, checksums, and known issues
 
 ## Release policy
 
-A milestone is not a release merely because code exists. Alpha requires a reproducible build; a device alpha requires verified boot and basic hardware testing. Stable requires sustained testing, security updates, and a documented recovery process.
+The repository scaffold is not a ROM build. A device alpha requires a reproducible image that boots on the exact target and passes documented basic hardware tests. Stable requires sustained testing, security maintenance, and a tested recovery process.

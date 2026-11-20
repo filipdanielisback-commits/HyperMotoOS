@@ -1,6 +1,6 @@
 # HyperMotoOS
 
-**HyperMoto OS** is an experimental Android custom-ROM project. The goal is a real operating-system build based on AOSP or a compatible Android ROM foundation, with HyperMoto changes integrated into Android's framework, SystemUI, Settings, setup flow, and device configuration.
+**HyperMoto OS** is an experimental Android custom-ROM project built directly on the Android Open Source Project (AOSP), with original HyperMoto changes integrated into Android's framework, SystemUI, Settings, setup flow, and device configuration.
 
 > **Status: early ROM scaffold — not buildable and not bootable.** This repository does not contain the Android platform source tree, a pinned upstream manifest, complete device tree, kernel, vendor blobs, or flashable images.
 
@@ -18,7 +18,7 @@ AOSP is a large multi-repository source tree. It is obtained separately with Goo
 
 ## Target device
 
-Initial research target: Motorola Moto G60, codename `hanoip`. Candidate community trees are listed in [device support](docs/DEVICE_SUPPORT.md). They must be audited and pinned before any build can be claimed.
+Initial research target: Motorola Moto G60, codename `hanoip`. Candidate community trees are listed in [device support](docs/DEVICE_SUPPORT.md). They must be audited for AOSP compatibility and pinned before any build can be claimed.
 
 ## Planned ROM features
 
